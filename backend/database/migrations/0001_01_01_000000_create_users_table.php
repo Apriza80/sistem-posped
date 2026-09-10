@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('nippos')->unique(); // NIPPOS dibuat unik agar tidak ada duplikasi
             $table->string('password');
-            $table->string('role')->default('admin');
+            $table->enum('role', ['superadmin', 'admin', 'petugas', 'samsat'])->default('petugas');
             $table->string('kantor')->default('Kantor Pusat');
             $table->rememberToken();
             $table->timestamps();

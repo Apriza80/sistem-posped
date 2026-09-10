@@ -12,7 +12,7 @@ class AuthController extends Controller
     // Fungsi untuk memproses login
     public function login(Request $request)
     {
-        // 1. Validasi input dari frontend
+        // 1. Validasi input dari client
         $request->validate([
             'nippos'   => 'required|string',
             'password' => 'required|string',
@@ -21,7 +21,7 @@ class AuthController extends Controller
         // 2. Cari user berdasarkan NIPPOS
         $user = User::where('nippos', $request->nippos)->first();
 
-        // 3. Cek apakah user ada dan passwordnya sesuai
+        // 3. Cek apakah user ada dan password sesuai
         if (! $user || ! Hash::check($request->password, $user->password)) {
             return response()->json([
                 'status'  => 'error',
@@ -29,10 +29,10 @@ class AuthController extends Controller
             ], 401);
         }
 
-        // 4. Buat token Sanctum jika data valid
+        // 4. Buat token Sanctum
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        // 5. Kembalikan response JSON ke frontend
+        // 5. Kembalikan response JSON
         return response()->json([
             'status'  => 'success',
             'message' => 'Login berhasil',
@@ -42,7 +42,7 @@ class AuthController extends Controller
                 'name'   => $user->name,
                 'nippos' => $user->nippos,
                 'role'   => $user->role,
-                'kantor' => $user->kantor,
+                'kantor' => $user->kantor ?? 'Kantor Pos Sidoarjo',
             ]
         ], 200);
     }

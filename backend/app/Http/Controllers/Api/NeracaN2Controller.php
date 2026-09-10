@@ -8,69 +8,115 @@ use Illuminate\Http\Request;
 
 class NeracaN2Controller extends Controller
 {
+    // Mengambil data untuk tabel Rekap N2 (dengan filter kantor & tanggal)
     public function index(Request $request)
     {
         $query = NeracaN2::with('user')->latest();
 
-        // Jika user mengisi tanggal pencarian di frontend
+        // Filter Dropdown Kantor
+        if ($request->filled('kantor') && $request->kantor !== 'Semua Kantor') {
+            $query->where('kpc_kantor', 'like', '%' . $request->kantor . '%');
+        }
+
+        // Filter Input Tanggal
         if ($request->filled('tanggal')) {
             $query->whereDate('tanggal', $request->tanggal);
         }
 
-        $riwayat = $query->get();
-
         return response()->json([
             'status' => 'success',
-            'data'   => $riwayat,
+            'data'   => $query->get(),
         ], 200);
     }
 
-    // 2. Simpan input saat tombol "Simpan Neraca N2" ditekan
+    // Menerima submit saat tombol "Simpan ke Rekap N2" ditekan
     public function store(Request $request)
     {
-        $request->validate([
-            'kantor'              => 'required|string',
-            'tanggal'             => 'required|date',
-            'petugas_loket'       => 'required|string',
-            'jumlah_penerimaan'   => 'required|numeric',
-            'jumlah_pengeluaran'  => 'required|numeric',
-            'penerimaan_details'  => 'nullable|array',
-            'pengeluaran_details' => 'nullable|array',
+        $validated = $request->validate([
+            'nama_petugas'           => 'required|string',
+            'kpc_kantor'             => 'required|string',
+            'tanggal'                => 'required|date',
+            'jumlah_penerimaan_kas'  => 'required|numeric',
+            'jumlah_pengeluaran_kas' => 'required|numeric',
+            'ringkasan'              => 'nullable|array',
+            'pendapatan_details'     => 'nullable|array',
+            'pengeluaran_details'    => 'nullable|array',
         ]);
 
         $neraca = NeracaN2::create([
-            'user_id'             => $request->user()->id,
-            'kantor'              => $request->kantor,
-            'tanggal'             => $request->tanggal,
-            'petugas_loket'       => $request->petugas_loket,
-            'jumlah_penerimaan'   => $request->jumlah_penerimaan,
-            'jumlah_pengeluaran'  => $request->jumlah_pengeluaran,
-            'penerimaan_details'  => $request->penerimaan_details,
-            'pengeluaran_details' => $request->pengeluaran_details,
+            'user_id'                => $request->user()->id,
+            'nama_petugas'           => $validated['nama_petugas'],
+            'kpc_kantor'             => $validated['kpc_kantor'],
+            'tanggal'                => $validated['tanggal'],
+            'jumlah_penerimaan_kas'  => $validated['jumlah_penerimaan_kas'],
+            'jumlah_pengeluaran_kas' => $validated['jumlah_pengeluaran_kas'],
+            'ringkasan'              => $validated['ringkasan'] ?? null,
+            'pendapatan_details'     => $validated['pendapatan_details'] ?? null,
+            'pengeluaran_details'    => $validated['pengeluaran_details'] ?? null,
         ]);
 
         return response()->json([
             'status'  => 'success',
-            'message' => 'Neraca N2 berhasil disimpan',
+            'message' => 'Neraca N2 berhasil disimpan ke Rekap N2',
             'data'    => $neraca,
         ], 201);
     }
 
-    // 3. Ambil data detail 1 Neraca N2 berdasarkan ID (untuk cetak / Export PDF)
+    // Mengambil satu data spesifik untuk cetak PDF/detail
     public function show($id)
     {
-        $neraca = NeracaN2::with('user')->find($id);
+        $neraca = NeracaN2::find($id);
 
         if (! $neraca) {
-            return response()->json([
-                'status'  => 'error',
-                'message' => 'Data Neraca N2 tidak ditemukan',
-            ], 404);
+            return response()->json(['status' => 'error', 'message' => 'Data tidak ditemukan'], 404);
         }
 
+        return response()->json(['status' => 'success', 'data' => $neraca], 200);
+    }
+
+    // Memperbarui data saat tombol Edit ditekan
+    public function update(Request $request, $id)
+    {
+        $neraca = NeracaN2::find($id);
+
+        if (! $neraca) {
+            return response()->json(['status' => 'error', 'message' => 'Data tidak ditemukan'], 404);
+        }
+
+        $validated = $request->validate([
+            'nama_petugas'           => 'sometimes|required|string',
+            'kpc_kantor'             => 'sometimes|required|string',
+            'tanggal'                => 'sometimes|required|date',
+            'jumlah_penerimaan_kas'  => 'sometimes|required|numeric',
+            'jumlah_pengeluaran_kas' => 'sometimes|required|numeric',
+            'ringkasan'              => 'nullable|array',
+            'pendapatan_details'     => 'nullable|array',
+            'pengeluaran_details'    => 'nullable|array',
+        ]);
+
+        $neraca->update($validated);
+
         return response()->json([
-            'status' => 'success',
-            'data'   => $neraca,
+            'status'  => 'success',
+            'message' => 'Data Neraca N2 berhasil diperbarui',
+            'data'    => $neraca,
+        ], 200);
+    }
+
+    // Menghapus data saat tombol Hapus ditekan
+    public function destroy($id)
+    {
+        $neraca = NeracaN2::find($id);
+
+        if (! $neraca) {
+            return response()->json(['status' => 'error', 'message' => 'Data tidak ditemukan'], 404);
+        }
+
+        $neraca->delete();
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Data Neraca N2 berhasil dihapus',
         ], 200);
     }
 }

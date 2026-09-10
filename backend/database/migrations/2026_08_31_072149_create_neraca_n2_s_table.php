@@ -11,23 +11,26 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('neraca_n2_s', function (Blueprint $table) {
+        Schema::create('neraca_n2s', function (Blueprint $table) {
             $table->id();
-            // Relasi ke tabel users (siapa petugas yang input)
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             
-            // Kolom Header Form
-            $table->string('kantor');            // Contoh: "Kantor Pos Sidoarjo 61200"
-            $table->date('tanggal');             // Tanggal laporan
-            $table->string('petugas_loket');     // Nama petugas pada input form
+            // Sesuai form atas
+            $table->string('nama_petugas'); // Input: "NAMA"
+            $table->string('kpc_kantor');   // Input: "KPC / KANTOR"
+            $table->date('tanggal');        // Input: "TANGGAL"
             
-            // Kolom Ringkasan Angka Uang
-            $table->decimal('jumlah_penerimaan', 15, 2)->default(0);
-            $table->decimal('jumlah_pengeluaran', 15, 2)->default(0);
+            // Angka total kas utama di bagian bawah (Rp 57.500.000)
+            $table->decimal('jumlah_penerimaan_kas', 15, 2)->default(0);
+            $table->decimal('jumlah_pengeluaran_kas', 15, 2)->default(0);
             
-            // Kolom JSON untuk rincian baris input penerimaan & pengeluaran kas
-            $table->json('penerimaan_details')->nullable();
+            // Sub-total ringkasan (panjar kasir, saldo ditahan kemarin/hari ini, dll)
+            $table->json('ringkasan')->nullable();
+            
+            // Seluruh baris tabel PENDAPATAN & PENGELUARAN (termasuk rekening tambahan)
+            $table->json('pendapatan_details')->nullable();
             $table->json('pengeluaran_details')->nullable();
+            
             $table->timestamps();
         });
     }
