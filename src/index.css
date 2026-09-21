@@ -1,0 +1,17 @@
+/* Reset total index.css agar full screen 100% tanpa batas */
+html,
+body,
+#root {
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background-color: #f4f6f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

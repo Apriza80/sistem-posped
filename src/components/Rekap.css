@@ -1,0 +1,262 @@
+/* =================================================== */
+/* REKAP.CSS - TAMPILAN TABEL & KARTU REKAP N2 RAPI    */
+/* =================================================== */
+
+.filter-table-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search-input,
+.kantor-select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+}
+
+/* REKAP CARD LIST (MODEL KARTU LAPORAN) */
+.rekap-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.rekap-item-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 16px 20px;
+}
+
+.rekap-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.rekap-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rekap-number {
+  background-color: #00529c;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.rekap-nama {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.rekap-subinfo {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.rekap-date {
+  color: #00529c;
+  font-weight: 600;
+}
+
+.rekap-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.rekap-detail-block {
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.block-remise {
+  background-color: #f0f7ff;
+  border: 1px solid #bfdbfe;
+}
+
+.block-saldo {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.block-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #00529c;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 82, 156, 0.15);
+  padding-bottom: 4px;
+}
+
+.block-saldo .block-title {
+  color: #15803d;
+  border-bottom-color: rgba(21, 128, 61, 0.2);
+}
+
+/* PERBAIKAN TATA LETAK GRID 4 KOLOM REMISE AGAR TIDAK DEMPET */
+.grid-details-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+}
+
+.detail-item span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.detail-item strong {
+  color: #1e293b;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.total-item-bottom {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.total-item-bottom span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.total-item-bottom strong {
+  font-size: 14px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.text-teal {
+  color: #15803d !important;
+}
+
+/* =================================================== */
+/* TOMBOL AKSI REKAP (JARAK, PADDING, & WARNA)         */
+/* =================================================== */
+
+.rekap-card-header div[style*="display: flex"],
+.action-buttons-wrapper,
+.rekap-item-card div:has(> button) {
+  display: flex !important;
+  gap: 8px !important; /* Memberikan jarak renggang antar tombol */
+  align-items: center !important;
+}
+
+.rekap-item-card button {
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* 1. Tombol Edit (Biru) */
+.rekap-item-card button:nth-of-type(1) {
+  background-color: #00529c !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.rekap-item-card button:nth-of-type(1):hover {
+  background-color: #00407a !important;
+}
+
+/* 2. Tombol Hapus (Pink / Merah Muda Lembut) */
+.rekap-item-card button:nth-of-type(2) {
+  background-color: #fce7f3 !important;
+  color: #be185d !important;
+  border: 1px solid #fbcfe8 !important;
+}
+
+.rekap-item-card button:nth-of-type(2):hover {
+  background-color: #fbcfe8 !important;
+}
+
+/* 3. Tombol PDF (Oranye Cerah) */
+.rekap-item-card button:nth-of-type(3) {
+  background-color: #ffedd5 !important;
+  color: #c2410c !important;
+  border: 1px solid #fed7aa !important;
+}
+
+.rekap-item-card button:nth-of-type(3):hover {
+  background-color: #fed7aa !important;
+}
+
+/* =================================================== */
+/* RESPONSIF KHUSUS LAYAR KECIL / HP (AGAR TIDAK NUMPUK)*/
+/* =================================================== */
+@media (max-width: 900px) {
+  .rekap-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .action-buttons-wrapper {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .rekap-card-body {
+    grid-template-columns: 1fr; /* Blok Remise dan Saldo Tahan jadi turun ke bawah (1 kolom) */
+  }
+
+  /* Di dalam blok Remise (yang ada 4 item) menyesuaikan jadi 2 kolom di HP */
+  .rekap-detail-block .block-remise div[style*="grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input,
+  .kantor-select {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}

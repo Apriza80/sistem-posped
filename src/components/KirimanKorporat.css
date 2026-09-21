@@ -1,0 +1,151 @@
+/* Styling Responsif untuk Kiriman Korporat (Tema Warna Biru) */
+.pb-page-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.pb-top-banner {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.pb-banner-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pb-accent-bar {
+  width: 6px;
+  height: 36px;
+  background-color: #2563eb; /* Berubah jadi Biru */
+  border-radius: 4px;
+}
+
+.pb-main-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.pb-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pb-field-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.pb-input-control {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pb-input-control:focus {
+  border-color: #2563eb; /* Berubah jadi Biru */
+}
+
+.pb-btn-submit {
+  background: #2563eb; /* Berubah jadi Biru */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.pb-btn-submit:hover {
+  background: #1d4ed8; /* Biru lebih gelap saat hover */
+}
+
+/* Memperbaiki tampilan input tanggal di HP agar tidak putih dan kebesaran */
+input[type="date"] {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  box-sizing: border-box;
+}
+
+/* Responsif untuk Layar HP / Mobile */
+@media screen and (max-width: 768px) {
+  .pb-page-container {
+    padding: 12px;
+  }
+
+  .pb-main-card {
+    padding: 16px;
+  }
+
+  .pb-banner-title h2 {
+    font-size: 18px !important;
+  }
+
+  /* Mengatur form filter tanggal & pencarian agar tersusun rapi dan tidak melar di HP */
+  .lp-card div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .lp-card input[type="text"],
+  .lp-card input[type="date"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .pb-main-card > div[style*="display: flex"] {
+    flex-direction: column !important;
+  }
+
+  .pb-main-card button {
+    width: 100%;
+  }
+}
+
+/* Memaksa teks tanggal agar selalu terlihat jelas dan tidak putih/hilang di HP */
+input[type="date"] {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Mengatasi placeholder tanggal bawaan HP yang sering kosong/putih */
+input[type="date"]:invalid::-webkit-datetime-edit {
+  color: #94a3b8; /* Warna abu-abu petunjuk seperti placeholder */
+}
+
+input[type="date"]:valid::-webkit-datetime-edit {
+  color: #334155; /* Warna teks normal setelah tanggal dipilih */
+}
+
+/* Memastikan input date selalu terlihat rapi dan tidak transparan di HP */
+input[type="date"] {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  appearance: auto;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: opacity(0.7);
+}

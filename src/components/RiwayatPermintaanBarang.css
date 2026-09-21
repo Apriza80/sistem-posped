@@ -1,0 +1,207 @@
+/* ================================================= */
+/* CSS KHUSUS HALAMAN RIWAYAT PERMINTAAN BARANG      */
+/* ================================================= */
+
+.rpb-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.rpb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.rpb-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00529c;
+  margin: 0;
+}
+
+.rpb-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.rpb-search-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+
+.rpb-search-input:focus {
+  border-color: #00529c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 82, 156, 0.15);
+}
+
+.rpb-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.rpb-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 700px;
+}
+
+.rpb-table th {
+  background-color: #f4f6f8;
+  color: #333333;
+  padding: 12px 14px;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 13px;
+}
+
+.rpb-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #444444;
+}
+
+.rpb-table tr:hover {
+  background-color: #fafbfc;
+}
+
+.rpb-badge-kode {
+  font-weight: 600;
+  color: #00529c;
+}
+
+.rpb-btn-action {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.rpb-btn-action:hover {
+  opacity: 0.85;
+}
+
+.rpb-btn-edit {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border: 1px solid #bfdbfe !important;
+  margin-right: 6px;
+}
+
+.rpb-btn-delete {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fecaca !important;
+}
+
+.rpb-empty-row {
+  text-align: center;
+  padding: 24px;
+  color: #777777;
+}
+
+/* ================================================= */
+/* TAMBAHAN STYLING STATUS & TOMBOL AKSI             */
+/* ================================================= */
+.rpb-badge-status {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+}
+
+.status-order {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.status-dipenuhi {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.status-kosong {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.rpb-action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Styling Dropdown Status Interaktif (Diperlebar agar tidak terpotong) */
+.rpb-status-select {
+  width: 100%;
+  min-width: 115px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.select-order {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.select-dipenuhi {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.select-kosong {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+/* Responsif untuk HP / Tablet */
+@media screen and (max-width: 768px) {
+  .rpb-container {
+    padding: 12px;
+  }
+
+  .rpb-card {
+    padding: 16px;
+  }
+
+  .rpb-title {
+    font-size: 20px;
+  }
+}

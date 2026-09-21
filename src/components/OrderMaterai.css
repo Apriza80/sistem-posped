@@ -1,0 +1,138 @@
+/* Container Utama */
+.order-materai-container {
+  padding: 24px;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.page-header-box {
+  margin-bottom: 20px;
+}
+
+.page-main-title {
+  color: #1e293b;
+  font-weight: bold;
+  margin: 0;
+  font-size: 22px;
+}
+
+.page-subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* Card Form Full Melebar */
+.order-materai-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Form Group: Label di atas, Input di bawah secara vertikal */
+.form-group {
+  margin-bottom: 18px;
+  display: block;
+}
+
+.form-group-last {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  border-color: #00529c;
+  box-shadow: 0 0 0 3px rgba(0, 82, 156, 0.15);
+}
+
+.form-control-disabled {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.form-control-highlight {
+  background-color: #f8fafc;
+  color: #0d9488;
+  font-weight: bold;
+}
+
+/* Kotak Tombol Aksi di Kanan Bawah */
+.form-action-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-simpan-materai {
+  padding: 11px 24px;
+  background-color: #00529c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+
+.btn-simpan-materai:hover {
+  background-color: #003d75;
+}
+
+/* --- MEDIA QUERY / RESPONSIVE UNTUK HP & TABLET --- */
+@media (max-width: 768px) {
+  .order-materai-container {
+    padding: 12px;
+  }
+
+  .order-materai-card {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .page-main-title {
+    font-size: 19px;
+  }
+
+  .form-control {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .form-action-box {
+    justify-content: stretch;
+  }
+
+  .btn-simpan-materai {
+    width: 100%;
+  }
+}

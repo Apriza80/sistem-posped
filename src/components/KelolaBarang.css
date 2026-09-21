@@ -1,0 +1,309 @@
+/* ================================================= */
+/* CSS KELOLA BARANG (BIRU MATENG & FULL RESPONSIF)  */
+/* ================================================= */
+
+.kb-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.kb-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.kb-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.kb-header-title h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.kb-icon {
+  font-size: 20px;
+}
+
+/* Form Grid */
+.kb-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.kb-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.kb-input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.kb-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #334155;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.kb-control:focus {
+  border-color: #003d73;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 61, 115, 0.12);
+}
+
+.kb-button-group {
+  display: flex;
+  align-items: flex-end;
+}
+
+.kb-btn-simpan {
+  background-color: #15803d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  height: 42px;
+  white-space: nowrap;
+}
+
+.kb-btn-simpan:hover {
+  background-color: #166534;
+}
+
+/* Styling Tambahan Mode Edit */
+.kb-card-editing {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15) !important;
+}
+
+.kb-badge-editing {
+  background-color: #fef3c7;
+  color: #b45309;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid #fde68a;
+}
+
+.kb-btn-update {
+  background-color: #d97706 !important;
+}
+.kb-btn-update:hover {
+  background-color: #b45309 !important;
+}
+
+.kb-btn-batal {
+  background-color: #64748b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 42px;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+.kb-btn-batal:hover {
+  background-color: #475569;
+}
+
+/* Highlight Baris yang Sedang Diedit */
+.tr-highlight-edit {
+  background-color: #fef9c3 !important;
+}
+.mobile-highlight-edit {
+  border: 2px solid #f59e0b !important;
+  background-color: #fef9c3 !important;
+}
+
+/* Tabel Card */
+.kb-table-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.kb-table-responsive {
+  width: 100%;
+}
+
+.kb-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.kb-table th {
+  background-color: #003d73; /* Biru mateng */
+  color: #ffffff;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.kb-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #334155;
+}
+
+.kb-table tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Tombol Aksi */
+.kb-action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.kb-btn-action {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.kb-btn-action:hover {
+  opacity: 0.85;
+}
+
+.kb-btn-edit {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.kb-btn-hapus {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* Mobile Card Default Sembunyi */
+.mobile-card-list {
+  display: none;
+}
+
+/* Responsif untuk Layar HP / Inspect Mode */
+@media screen and (max-width: 768px) {
+  .kb-container {
+    padding: 10px;
+  }
+
+  .kb-card {
+    padding: 16px;
+  }
+
+  .kb-form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .kb-button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .kb-button-group button {
+    width: 100%;
+  }
+
+  .desktop-table {
+    display: none;
+  }
+
+  .mobile-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    background-color: #f8fafc;
+  }
+
+  .mobile-card-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .mobile-label {
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .mobile-value {
+    color: #1e293b;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .mobile-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .mobile-card-actions .kb-btn-action {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+  }
+}

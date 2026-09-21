@@ -1,0 +1,307 @@
+/* =========================================================
+   NERACA N2 - FIX LAYOUT & KOLOM NOMINAL
+   ========================================================= */
+
+/* =========================
+   CONTAINER
+   ========================= */
+
+.neraca-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================
+   GRID PENDAPATAN & PENGELUARAN
+   ========================= */
+
+.neraca-sheet-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 16px !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-top: 16px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* =========================
+   KOLOM SHEET
+   ========================= */
+
+.sheet-column {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  background-color: #ffffff !important;
+
+  border-radius: 6px !important;
+  border: 1px solid #cbd5e1 !important;
+
+  overflow: hidden !important;
+
+  box-sizing: border-box !important;
+}
+
+/* =========================
+   HEADER PENDAPATAN / PENGELUARAN
+   ========================= */
+
+.sheet-header {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  padding: 10px !important;
+
+  font-weight: 700 !important;
+  font-size: 13px !important;
+
+  text-align: center !important;
+
+  color: #ffffff !important;
+
+  box-sizing: border-box !important;
+
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.header-pendapatan {
+  background-color: #0b4885 !important;
+}
+
+.header-pengeluaran {
+  background-color: #007a87 !important;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.sheet-column table {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+
+  border-collapse: collapse !important;
+
+  table-layout: fixed !important;
+
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   PEMBAGIAN KOLOM
+   ---------------------------------------------------------
+   NAMA REKENING : 65%
+   SAT           : 15%
+   BESAR UANG    : 20%
+   ========================================================= */
+
+/* NAMA REKENING */
+
+.sheet-column th:nth-child(1),
+.sheet-column td:nth-child(1) {
+  width: 65% !important;
+  max-width: 65% !important;
+
+  text-align: left !important;
+
+  padding-left: 8px !important;
+  padding-right: 4px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* SAT */
+
+.sheet-column th:nth-child(2),
+.sheet-column td:nth-child(2) {
+  width: 15% !important;
+  max-width: 15% !important;
+
+  text-align: center !important;
+
+  box-sizing: border-box !important;
+}
+
+/* BESAR UANG */
+
+.sheet-column th:nth-child(3),
+.sheet-column td:nth-child(3) {
+  width: 20% !important;
+  max-width: 20% !important;
+
+  text-align: left !important;
+
+  padding-left: 4px !important;
+  padding-right: 6px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   HEADER TABLE
+   ========================================================= */
+
+.sheet-column th {
+  background-color: #f1f5f9 !important;
+
+  font-size: 11px !important;
+  font-weight: 500 !important;
+
+  padding: 8px 4px !important;
+
+  border-bottom: 1px solid #cbd5e1 !important;
+  border-right: 1px solid #cbd5e1 !important;
+
+  color: #334155 !important;
+
+  text-align: center !important;
+
+  box-sizing: border-box !important;
+
+  overflow: hidden !important;
+
+  white-space: nowrap !important;
+}
+
+/* =========================================================
+   CELL TABLE
+   ========================================================= */
+
+.sheet-column td {
+  padding: 4px !important;
+
+  border-bottom: 1px solid #e2e8f0 !important;
+  border-right: 1px solid #f1f5f9 !important;
+
+  font-size: 11px !important;
+
+  vertical-align: middle !important;
+
+  box-sizing: border-box !important;
+
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.input-table {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  height: auto !important;
+
+  box-sizing: border-box !important;
+
+  background: transparent !important;
+
+  border: 1px solid #cbd5e1 !important;
+
+  border-radius: 4px !important;
+
+  outline: none !important;
+
+  padding: 4px 6px !important;
+
+  font-size: 11px !important;
+
+  color: #1e293b !important;
+}
+
+/* =========================================================
+   INPUT SAT
+   ========================================================= */
+
+.sheet-column td:nth-child(2) .input-table {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  text-align: center !important;
+
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   INPUT BESAR UANG
+   ========================================================= */
+
+.sheet-column td:nth-child(3) .input-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  box-sizing: border-box !important;
+
+  text-align: left !important;
+}
+
+/* =========================================================
+   FOCUS INPUT
+   ========================================================= */
+
+.input-table:focus {
+  background-color: #ffffff !important;
+
+  border-color: #2b6fb7 !important;
+
+  box-shadow: 0 0 0 2px rgba(43, 111, 183, 0.15) !important;
+}
+
+/* =========================================================
+   WARNA BARIS
+   ========================================================= */
+
+.row-total {
+  background-color: #e0f2fe !important;
+  font-weight: 700 !important;
+}
+
+.subhead-yellow {
+  background-color: #fef08a !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.row-highlight-blue {
+  background-color: #bfdbfe !important;
+  font-weight: 700 !important;
+}
+
+.row-highlight-green {
+  background-color: #dcfce7 !important;
+  font-weight: 700 !important;
+}
+
+.row-highlight-pink {
+  background-color: #ffe4e6 !important;
+  font-weight: 700 !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .neraca-sheet-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sheet-column {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

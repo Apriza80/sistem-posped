@@ -1,0 +1,181 @@
+/* =================================================== */
+/* SIDEBAR.CSS - KHUSUS MENU & NAVIGASI KIRI           */
+/* =================================================== */
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: calc(100vh - 60px);
+  background-color: #0b5cab;
+  padding: 16px 10px;
+
+  /* TAMBAHAN UNTUK BUKA TUTUP */
+  transition: all 0.3s ease-in-out;
+}
+
+/* SIDEBAR SAAT DITUTUP */
+.sidebar:not(.open) {
+  margin-left: -270px;
+}
+
+/* SIDEBAR SAAT DIBUKA */
+.sidebar.open {
+  margin-left: 0;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-left-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-item.active {
+  background-color: #1d70be;
+  color: #ffffff;
+}
+
+.arrow-icon {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(90deg);
+}
+
+.submenu-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 36px;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  gap: 4px;
+}
+
+.submenu-item {
+  background: transparent;
+  border: none;
+  color: #dbeafe;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submenu-item:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.submenu-item.active-sub {
+  color: #ffffff;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+}
+
+/* =================================================== */
+/* LAPTOP / DESKTOP                                    */
+/* =================================================== */
+
+@media screen and (min-width: 769px) {
+  .sidebar {
+    position: sticky;
+    top: 60px; /* Sesuaikan jika tinggi navbar atas 60px */
+    height: calc(100vh - 60px);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto; /* Agar menu yang panjang bisa di-scroll di dalam sidebar sendiri */
+    transition: margin-left 0.3s ease-in-out;
+  }
+
+  .sidebar:not(.open) {
+    margin-left: -270px;
+  }
+
+  .sidebar.open {
+    margin-left: 0;
+  }
+
+  /* Overlay tidak perlu di desktop */
+  .sidebar-overlay {
+    display: none;
+  }
+}
+
+/* =================================================== */
+/* HP / TABLET                                         */
+/* =================================================== */
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed !important;
+    top: 60px !important;
+    left: -260px !important;
+    margin-left: 0 !important;
+    width: 250px !important;
+    height: calc(100vh - 60px) !important;
+    min-height: calc(100vh - 60px) !important;
+    max-height: calc(100vh - 60px) !important;
+    overflow-y: auto !important; /* Agar bisa di-scroll sampai bawah saat dibuka di HP/Inspect */
+    z-index: 9999 !important;
+    transition: left 0.3s ease-in-out !important;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .sidebar.open {
+    left: 0 !important;
+  }
+
+  .sidebar-overlay {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    z-index: 9998 !important;
+  }
+}

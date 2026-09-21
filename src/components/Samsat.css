@@ -1,0 +1,152 @@
+/* Container Utama */
+.neraca-container {
+  padding: 24px;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.page-header-box {
+  margin-bottom: 20px;
+}
+
+.page-main-title {
+  color: #1e293b;
+  font-weight: bold;
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Card Universal */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+/* Label & Input Filter */
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 6px;
+}
+
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  border-color: #00529c;
+  box-shadow: 0 0 0 3px rgba(0, 82, 156, 0.15);
+}
+
+.filter-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Tabel & Responsivitasnya */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 650px;
+}
+
+th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+td {
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+.table-empty {
+  padding: 24px;
+  text-align: center;
+  color: #888;
+}
+
+/* Tombol Aksi (Lihat, Download, Hapus) */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-action {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-view {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.btn-view:hover {
+  background: #bae6fd;
+}
+
+.btn-download {
+  background: #dcfce7;
+  color: #15803d;
+}
+.btn-download:hover {
+  background: #bbf7d0;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.btn-delete:hover {
+  background: #fecaca;
+}
+
+/* --- MEDIA QUERY UNTUK RESPONSIVE --- */
+@media (max-width: 768px) {
+  .neraca-container {
+    padding: 12px;
+  }
+  .filter-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

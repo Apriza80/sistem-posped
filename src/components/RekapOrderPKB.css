@@ -1,0 +1,246 @@
+/* Container Utama */
+.neraca-container {
+  padding: 24px;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.page-header-box {
+  margin-bottom: 20px;
+}
+
+.page-main-title {
+  color: #1e293b;
+  font-weight: bold;
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Card Universal */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+/* Label & Input Filter */
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 6px;
+}
+
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  border-color: #00529c;
+  box-shadow: 0 0 0 3px rgba(0, 82, 156, 0.15);
+}
+
+.filter-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Tabel & Responsivitasnya */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Agar bisa digeser horizontal jika dibuka di HP */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  border: 1px solid #cbd5e1; /* Garis tepi luar tabel */
+}
+
+th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1; /* Garis vertikal & horizontal header */
+}
+
+td {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #334155;
+  border: 1px solid #cbd5e1; /* Garis vertikal & horizontal antar sel */
+  vertical-align: middle;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+.table-empty {
+  padding: 24px;
+  text-align: center;
+  color: #888;
+}
+
+/* Perbaikan Mutlak untuk Dropdown Status agar tidak terpotong */
+.status-dropdown {
+  width: 125px !important; /* Lebar pas dan lega untuk teks Order / Kirim */
+  padding: 8px 10px !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+  border-radius: 6px !important;
+  border: 1px solid #cbd5e1 !important;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Kolom Catatan di Kanan */
+.catatan-input {
+  width: 180px;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  box-sizing: border-box;
+}
+
+/* --- TOMBOL AKSI LEBIH KECIL & PAS KE TEKS --- */
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buttons .btn-edit,
+.action-buttons .btn-hapus {
+  padding: 5px 10px !important; /* Padding tipis agar pas merapat ke teks */
+  font-size: 12px !important;
+  font-weight: 600;
+  border-radius: 6px !important;
+  border: none !important;
+  cursor: pointer;
+  display: inline-flex; /* Menyesuaikan ukuran kotak otomatis mengikuti teks */
+  align-items: center;
+  gap: 4px; /* Jarak ikon dan teks */
+  box-sizing: border-box;
+}
+
+.action-buttons .btn-edit {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+
+.action-buttons .btn-hapus {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+}
+
+/* --- MEDIA QUERY UNTUK RESPONSIVE (HP / TABLET) --- */
+@media (max-width: 768px) {
+  .neraca-container {
+    padding: 12px;
+  }
+
+  .filter-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page-header-box {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .page-header-box button {
+    width: 100%;
+  }
+}
+
+/* --- ATURAN KHUSUS CETAK / PDF --- */
+@media print {
+  /* Atur ukuran halaman dan hilangkan margin agar header/footer browser tidak tercetak */
+  @page {
+    size: landscape;
+    margin: 8mm;
+  }
+
+  /* Sembunyikan elemen navigasi, sidebar, header, filter, dan tombol aksi */
+  .navbar,
+  .sidebar,
+  .sidebar-overlay,
+  .filter-card,
+  .btn-primary,
+  .action-buttons,
+  button {
+    display: none !important;
+  }
+
+  /* Lebarkan area konten agar memenuhi kertas secara penuh */
+  .main-wrapper,
+  .content-area,
+  .neraca-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: white !important;
+  }
+
+  /* Bersihkan tampilan card tabel saat dicetak */
+  .card.table-card {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hilangkan efek garis scrollbar */
+  .table-responsive {
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  table {
+    width: 100% !important;
+    border: 1px solid #94a3b8 !important; /* Garis cetak lebih tegas */
+  }
+
+  th,
+  td {
+    border: 1px solid #94a3b8 !important; /* Garis vertikal & horizontal tabel saat dicetak */
+  }
+
+  /* Hilangkan dropdown border dan jadikan teks biasa atau tetap rapi saat dicetak */
+  .status-dropdown {
+    border: none !important;
+    background: transparent !important;
+    appearance: none;
+    -webkit-appearance: none;
+    font-weight: bold;
+    padding: 0 !important;
+  }
+
+  .catatan-input {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+}

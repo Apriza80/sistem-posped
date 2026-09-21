@@ -1,0 +1,121 @@
+/* PenjualanBeras.css */
+
+.pb-page-container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.pb-top-banner {
+  margin-bottom: 24px;
+}
+
+.pb-banner-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pb-accent-bar {
+  width: 6px;
+  height: 24px;
+  background-color: #2b6fb7;
+  border-radius: 4px;
+}
+
+.pb-banner-title h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.pb-main-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  border: 1px solid #e2e8f0;
+}
+
+.pb-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.pb-field-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.pb-input-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.pb-input-control:focus {
+  border-color: #2b6fb7;
+  box-shadow: 0 0 0 3px rgba(43, 111, 183, 0.15);
+}
+
+.pb-input-control:disabled {
+  background-color: #f8fafc;
+  color: #0d9488;
+  font-weight: bold;
+}
+
+.pb-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.pb-btn-submit {
+  background-color: #2b6fb7;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.pb-btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+/* === Responsif untuk HP / Layar Kecil === */
+@media (max-width: 768px) {
+  .pb-page-container {
+    padding: 12px;
+  }
+
+  .pb-main-card {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .pb-banner-title h2 {
+    font-size: 18px;
+  }
+
+  .pb-btn-submit {
+    width: 100%;
+  }
+}

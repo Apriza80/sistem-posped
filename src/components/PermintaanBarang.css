@@ -1,0 +1,172 @@
+/* ================================================= */
+/* CSS BERSIH TANPA ICON & TANPA TEKS ABU-ABU ATAS   */
+/* ================================================= */
+
+.pb-page-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 10px 20px 30px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.pb-top-banner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pb-banner-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pb-accent-bar {
+  width: 4px;
+  height: 24px;
+  background-color: #f97316;
+  border-radius: 2px;
+}
+
+.pb-top-banner h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.pb-main-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  padding: 30px;
+  box-sizing: border-box;
+  background-image: linear-gradient(to bottom, #ffffff, #fafbfc);
+}
+
+.pb-card-header {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 15px;
+}
+
+.pb-card-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  display: inline-block;
+}
+
+.pb-badge-mode {
+  font-size: 11px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.pb-card-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.pb-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 24px;
+}
+
+.pb-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.pb-field-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.pb-input-control {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #334155;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.pb-input-control:focus {
+  border-color: #00529c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 82, 156, 0.12);
+}
+
+.pb-locked-input {
+  background-color: #f8fafc;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.pb-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.pb-footer-note {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.pb-btn-submit {
+  background-color: #00529c;
+  color: #ffffff;
+  border: none;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 82, 156, 0.25);
+  transition: background-color 0.2s;
+}
+
+.pb-btn-submit:hover {
+  background-color: #003d73;
+}
+
+@media screen and (max-width: 768px) {
+  .pb-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .pb-main-card {
+    padding: 18px;
+  }
+  .pb-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .pb-btn-submit {
+    width: 100%;
+  }
+}
