@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/digitalp33/digitalposped.my.id
+    - /bin/cp -R dist/* $DEPLOYPATH/

@@ -69,13 +69,22 @@ function Login({ onLoginSuccess }) {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-          <div className="brand-posind" style={{ marginBottom: "8px" }}>
-            <span className="posind-main" style={{ fontSize: "24px" }}>
-              POS <span className="dot-i">i</span>ND
-            </span>
+          <div
+            className="brand-posind"
+            style={{
+              marginBottom: "12px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src="/logo-pos.jpeg"
+              alt="Logo Pos Indonesia"
+              style={{ width: "120px", height: "auto", objectFit: "contain" }}
+            />
           </div>
           <h2 style={{ color: "#1e293b", fontSize: "20px", margin: "0" }}>
-            Aplikasi PosPedia
+            Aplikasi Penyimpanan Digital
           </h2>
           <p style={{ color: "#64748b", fontSize: "13px", marginTop: "4px" }}>
             Silakan login menggunakan Nippos/NIP/Noppen Anda

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://sip-pound-donated.ngrok-free.dev/api",
+  baseURL: "https://digitalposped.my.id/api",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
